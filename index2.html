@@ -1,0 +1,38 @@
+<style>
+body{
+  margin:0
+}
+  </style>
+<script>
+  let maxHeadTop = 500, maxHeadLeft = 500, key, headTop = 250, headLeft = 250;
+  //alert("Hello, world!");
+  addEventListener("keypress", e=>{key = e.key});
+  let interval = setInterval(()=>{
+    //console.log(key);
+    switch(key){
+      case "w":
+        headTop -= 20;
+        break;
+      case "s":
+        headTop += 20;
+        break;
+      case "a":
+        headLeft -= 20;
+        break;
+      case "d":
+        headLeft += 20;
+        break;
+    }
+
+    if(headTop < 0 || headTop > maxHeadTop || headLeft < 0 || headLeft > maxHeadLeft){
+      clearInterval(interval);
+      alert("gameover");
+      location.href = location.href;
+    }
+
+    document.querySelector("div").style.top = headTop + "px";
+    document.querySelector("div").style.left = headLeft + "px"
+  }, 400);
+</script>
+<div style="width: 20px; height: 20px; position: absolute; top: 250px; left: 250px; background-color:black"></div>
+<div style="width: 500px; height: 500px; position: absolute; top: 0px; left: 0px; background-color:grey;z-index:-1"></div>
