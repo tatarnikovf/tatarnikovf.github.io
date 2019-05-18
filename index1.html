@@ -1,0 +1,26 @@
+<script>
+  let  maxHeadTop = 1600, maxHeadLeft = 900, key, headTop = 40, headLeft = 40;
+   //alert ("А надо ли?");
+   addEventListener("keypress", e => {key = e.key});
+   setInterval (()=>{
+     console.log(key);
+     switch (key){
+       case "w":
+         headTop -= 10;
+         break;
+       case "s":
+        headTop  += 10;
+        break;
+       case "a":
+         headLeft -= 10;
+         break;
+       case "d":
+         headLeft += 10;
+         break;
+      }
+      document.querySelector("div").style.top = headTop + "px"
+      document.querySelector("div").style.left = headLeft + "px"
+   } ,100)
+
+</script>
+<div style= "width: 20px; height: 20px; position: absolute; top: 40px; left: 40px; background-color:black"></div>
