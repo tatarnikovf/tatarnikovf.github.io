@@ -1,0 +1,24 @@
+<script>
+let width = 50, height = 50, key, headTop = 40, headLeft = 40;
+addEventListener("keypress", e=>{key = e.key});
+setInterval(()=>{
+  //console.log(key);
+  switch(key){
+    case "w":
+      headTop -= 20;
+      break;
+    case "s":
+      headTop += 20;
+      break;
+    case "a":
+      headLeft -= 20;
+      break;
+    case "d":
+      headLeft += 20;
+      break;
+  }
+  document.querySelector("div").style.top = headTop + "px";
+  document.querySelector("div").style.left = headLeft + "px";
+}, 1000);
+</script>
+<div style="width: 20px;height:20px; position: absolute; top: 40px; left: 40px; background-color:green"></div>
